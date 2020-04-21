@@ -97,8 +97,6 @@ class ConfigLoader(metaclass=InsightSingleton):
         return val
 
     def _load_all_options(self):
-
-        self.parse_str("SQLITE_DB_PATH", "sqlite_database", "filename", True)
         self.parse_str("HEADERS_FROM_EMAIL", "headers", "from", False, "")
         self.parse_str("DISCORD_TOKEN", "discord", "token", True)
         self.parse_str("CCP_CLIENT_ID", "ccp_developer", "client_id", True)
@@ -119,4 +117,9 @@ class ConfigLoader(metaclass=InsightSingleton):
         self.parse_int("LIMITER_CHANNEL_INTERVAL", "NULL", "NULL", False, 10, True)
         self.parse_int("LIMITER_USER_TICKETS", "NULL", "NULL", False, 4, True)
         self.parse_int("LIMITER_USER_INTERVAL", "NULL", "NULL", False, 45, True)
+        self.parse_str("POSTGRES_HOST", "NULL", "NULL", True)
+        self.parse_int("POSTGRES_PORT", "NULL", "NULL", False, 5432, True)
+        self.parse_str("POSTGRES_USER", "NULL", "NULL", True)
+        self.parse_str("POSTGRES_PASSWORD", "NULL", "NULL", True)
+        self.parse_str("POSTGRES_DB", "NULL", "NULL", True)
 
